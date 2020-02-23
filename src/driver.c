@@ -1,28 +1,14 @@
 #include "../include/driver.h"
 
 
-/// ROUTE DEFINITIONS
+/// GET ROUTE DEFINITION
 const char *GET_ROUTES[] = {
         "/demofunction",
         "/simple",
         "/favicon.ico",
         NULL
 };
-
-const char *POST_ROUTES[] = {
-        NULL
-};
-
-const char *PUT_ROUTES[] = {
-        NULL
-};
-
-const char *DELETE_ROUTES[] = {
-        NULL
-};
-
-/// ------- ROUTE DEFINITIONS
-/// ROUTE FUNCTION DEFINITIONS
+/// GET ROUTE FUNCTIONS
 char * (* GET[])(char *) = {
         demofunction,
         simple_response,
@@ -30,14 +16,32 @@ char * (* GET[])(char *) = {
         NULL
 };
 
+
+/// POST ROUTE DEFINITION
+const char *POST_ROUTES[] = {
+        NULL
+};
+/// POST ROUTE FUNCTIONS
 char * (* POST[])(char *) = {
         NULL
 };
 
+
+/// PUT ROUTE DEFINITION
+const char *PUT_ROUTES[] = {
+        NULL
+};
+/// PUT ROUTE FUNCTIONS
 char * (* PUT[])(char *) = {
         NULL
 };
 
+
+/// DELETE ROUTE DEFINITION
+const char *DELETE_ROUTES[] = {
+        NULL
+};
+/// DELETE ROUTE FUNCTIONS
 char * (* DELETE[])(char *) = {
         NULL
 };
@@ -79,7 +83,7 @@ char *get_response(char *s){
         exit(0);
 
     //printf("\n||%s||\n", type);
-    char *response;
+    char *response = NULL;
     if(strcmp(type, "GET") == 0){
         response = _get_response(&GET, GET_ROUTES,"asd", route);
     } else if(strcmp(type, "POST") == 0){
@@ -90,7 +94,7 @@ char *get_response(char *s){
         response = _get_response(DELETE, DELETE_ROUTES,"asd", route);
     }
    // printf("//%p//\n", response);
-    return response ? response : default_response;
+    return response ? response : strdup(default_response);
 }
 
 char default_response[] = "HTTP/1.1 200 OK\r\n"

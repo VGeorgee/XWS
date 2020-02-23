@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
         close(sock);
     }
     printf("RUNNING SERVER\n");
-    listen(sock, 1000);
+    listen(sock, 100);
     char input_buffer[DEFAULT_BUFFER_SIZE];
     while (1) {
         LOG("WAITING TO ACCEPT CLIENT");
@@ -62,6 +62,7 @@ int main(int argc, char **argv) {
         LOG("RESPONSE-----------------------------------------------------------")
         send(client_fd, response, strlen(response), 0); /*-1:'\0'*/
         close(client_fd);
+        free(response);
         LOG("DONE");
     }
 }

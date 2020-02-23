@@ -65,4 +65,3 @@ char *simple_response(char *s){
     strcpy(html, "simple response");
     return parse_response(STATUSCODE_OK_SUCCESS_HEADER, NULL, html);
 }
-
