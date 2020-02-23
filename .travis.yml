@@ -1,0 +1,13 @@
+language: C
+compiler: gcc
+
+before_install: npm i supertest
+
+script:
+  - gcc -coverage -I ./include src/*.c -o main
+  - gcov main
+  - ./main
+  - node test/simple.test.js
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

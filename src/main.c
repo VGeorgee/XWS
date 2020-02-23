@@ -5,7 +5,7 @@
 #include "../include/configuration.h"
 
 
-#define LOG(s) printf("\n[LOG]:\t%s\n", s);
+#define LOG(s) printf("[LOG]:\t%s\n", s);
 
 int main() {
     int one = 1, client_fd;
@@ -32,21 +32,22 @@ int main() {
         close(sock);
     }
     printf("RUNNING SERVER\n");
-    listen(sock, 1);
-    char s[DEFAULT_BUFFER_SIZE];
+    listen(sock, 1000);
+    char input_buffer[DEFAULT_BUFFER_SIZE];
     while (1) {
+        LOG("WAITING TO ACCEPT CLIENT");
         client_fd = accept(sock, (struct sockaddr *) &cli_addr, &sin_len);
         LOG("WAITING TO RECIEVE DATA");
-        recv(client_fd, s, 10000, 0);
+        recv(client_fd, input_buffer, 1000, 0);
         LOG("REQUEST------------------------------------------------------------")
-        puts(s);
+        puts(input_buffer);
         LOG("REQUEST------------------------------------------------------------")
         LOG("DATA RECIEVED");
         if (client_fd == -1) {
             perror("Can't accept");
             continue;
         }
-        char *response = get_response(s);
+        char *response = get_response(input_buffer);
         LOG("RESPONSE-----------------------------------------------------------")
         puts(response);
         LOG("RESPONSE-----------------------------------------------------------")
