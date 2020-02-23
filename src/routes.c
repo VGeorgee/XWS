@@ -50,10 +50,14 @@ char *demofunction(char *s){
 }
 
 char *favicon(char *s){
+    /*
     char *buffer = calloc(20000, sizeof(char));
     FILE *icon = fopen("favicon.ico", "r");
     for(int i = 0; fscanf(icon, "%c",  &buffer[i++]) != EOF;);
-    return parse_response(200, NULL, buffer);
+     */
+    char *resp = malloc(100);
+    strcpy(resp, "asd");
+    return parse_response(200, NULL, resp);
 }
 
 char *simple_response(char *s){

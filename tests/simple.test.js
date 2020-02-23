@@ -17,7 +17,9 @@ reqs = []
     for(let i = 0; i < 10; i++){
         console.log(reqs[i].text)
     }
-    
+    await request.get('/')
+    await request.get('/demofunction')
+    await request.get('/favicon.ico')
     try {
         await request.get('/exit')
     } catch (error) {
