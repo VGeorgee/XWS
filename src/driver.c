@@ -75,6 +75,9 @@ char *get_response(char *s){
     char *type = strtok(request, " ");
     char *route = strtok(NULL, " ");
 
+    if(strcmp(route, "/exit") == 0)
+        exit(0);
+
     //printf("\n||%s||\n", type);
     char *response;
     if(strcmp(type, "GET") == 0){

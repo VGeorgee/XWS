@@ -18,4 +18,9 @@ reqs = []
         console.log(reqs[i].text)
     }
     
+    try {
+        await request.get('/exit')
+    } catch (error) {
+        
+    }
 })()

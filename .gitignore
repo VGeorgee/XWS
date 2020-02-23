@@ -54,4 +54,5 @@ Mkfile.old
 dkms.conf
 .vscode
 test
+/cmake-build-debug/CMakeFiles/webserver.dir
 node_modules
