@@ -6,7 +6,7 @@ before_install: npm i supertest
 script:
   - gcc -coverage -I ./include src/*.c -o main
   - gcov main
-  - ./main &
+  - ./main 28015 &
   - sleep 3
   - node ./tests/simple.test.js
 

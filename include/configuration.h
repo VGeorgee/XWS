@@ -19,7 +19,7 @@
   #define OSTYPE 0
 #endif
 
-#define DEFAULT_PORT 28015
+#define DEFAULT_PORT 80
 #define DEFAULT_BUFFER_SIZE 40000
 
 

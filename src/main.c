@@ -7,7 +7,16 @@
 
 #define LOG(s) printf("[LOG]:\t%s\n", s);
 
-int main() {
+int main(int argc, char **argv) {
+    int default_port;
+
+    if(argc == 2){
+        default_port = atoi(argv[1]);
+    } else {
+        default_port = DEFAULT_PORT;
+    }
+
+
     int one = 1, client_fd;
     struct sockaddr_in svr_addr, cli_addr;
     socklen_t sin_len = sizeof(cli_addr);
@@ -23,7 +32,7 @@ int main() {
     if(sock < 1) return 0;
     setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(int));
 
-    int port = DEFAULT_PORT;
+    int port = default_port;
     svr_addr.sin_family = AF_INET;
     svr_addr.sin_addr.s_addr = INADDR_ANY;
     svr_addr.sin_port = htons(port);

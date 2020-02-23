@@ -62,6 +62,7 @@ char *favicon(char *s){
 
 char *simple_response(char *s){
     char *html = malloc(1000);
-    strcpy(html, "asdfasdfasdf");
+    strcpy(html, "simple response");
     return parse_response(200, NULL, html);
 }
+
