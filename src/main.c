@@ -12,12 +12,12 @@ int main() {
     struct sockaddr_in svr_addr, cli_addr;
     socklen_t sin_len = sizeof(cli_addr);
 
-    if (OSTYPE == 2) {
-        WSADATA wsaData;
-        if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
-            return 0;
-        }
+#if OSTYPE == 2
+    WSADATA wsaData;
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        return 0;
     }
+#endif
 
     int sock = socket(AF_INET, SOCK_STREAM, 0);
     if(sock < 1) return 0;
