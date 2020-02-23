@@ -8,7 +8,7 @@ script:
   - gcov main
   - ./main &
   - sleep 3
-  - node test/simple.test.js
+  - node ./test/simple.test.js
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
