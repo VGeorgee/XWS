@@ -1,6 +1,6 @@
 let request = require('supertest')
-
-request = request('http://localhost')
+const DEFAULT_PORT = 28015
+request = request('http://localhost:' + (DEFAULT_PORT || 80))
 
 reqs = []
 
