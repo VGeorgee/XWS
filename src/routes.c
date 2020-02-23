@@ -1,5 +1,5 @@
 #include "../include/routes.h"
-
+#include "../include/status_codes.h"
 
 int get_length(char **headers, char *body){
     int buffer_length = sizeof(uint32_t);
@@ -23,10 +23,10 @@ int get_length(char **headers, char *body){
  * @param body
  * @return response
  */
-char *parse_response(int status_code, char **headers, char *body){
+char *parse_response(const char status_code[], char **headers, char *body){
     int buffer_length = get_length(headers, body);
     char *response = calloc(buffer_length + 200, sizeof(uint8_t));
-    sprintf(response, "HTTP/1.1 %d OK\r\nContent-Type: text/html; charset=UTF-8\r\n", status_code);
+    sprintf(response, "HTTP/1.1 %s\r\nContent-Type: text/html; charset=UTF-8\r\n", status_code);
     char length[50] = {0};
     sprintf(length, "Content-Length: %d\r\n", strlen(body));
     strcat(response, length);
@@ -56,13 +56,13 @@ char *favicon(char *s){
     for(int i = 0; fscanf(icon, "%c",  &buffer[i++]) != EOF;);
      */
     char *resp = malloc(100);
-    strcpy(resp, "asd");
-    return parse_response(200, NULL, resp);
+    strcpy(resp, "");
+    return parse_response(STATUSCODE_OK_SUCCESS_HEADER, NULL, resp);
 }
 
 char *simple_response(char *s){
     char *html = malloc(1000);
     strcpy(html, "simple response");
-    return parse_response(200, NULL, html);
+    return parse_response(STATUSCODE_OK_SUCCESS_HEADER, NULL, html);
 }
 
