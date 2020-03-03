@@ -3,12 +3,12 @@
 #ifndef WEBSERVER_STATUS_CODES_H
 #define WEBSERVER_STATUS_CODES_H
 
-// 100
+// 1xx
 #define STATUSCODE_CONTINUE_HEADER          "100 Continue"
 #define STATUSCODE_NOTFOUND_BODY            ""
 
 
-// 200
+// 2xx
 #define STATUSCODE_OK_SUCCESS_HEADER        "200 OK"
 #define STATUSCODE_OK_SUCCESS_BODY          ""
 
@@ -19,7 +19,7 @@
 #define STATUSCODE_ACCEPTED_BODY            ""
 
 
-//400
+//4xx
 #define STATUSCODE_BADREQUEST_HEADER        "400 Bad Request"
 #define STATUSCODE_BADREQUEST_BODY          "Bad Request!"
 
@@ -33,7 +33,7 @@
 #define STATUSCODE_NOTFOUND_BODY            "Page Not found!"
 
 
-// 500
+// 5xx
 #define STATUSCODE_INTERNALSERVERERROR_HEADER   "500 Internal Server Error"
 #define STATUSCODE_INTERNALSERVERERROR_BODY     "Internal Server Error"
 

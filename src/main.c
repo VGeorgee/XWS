@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
         LOG("WAITING TO RECIEVE DATA");
         recv(client_fd, input_buffer, 1000, 0);
         LOG("REQUEST------------------------------------------------------------")
-        puts(input_buffer);
+        //puts(input_buffer);
         LOG("REQUEST------------------------------------------------------------")
         LOG("DATA RECIEVED");
         if (client_fd == -1) {

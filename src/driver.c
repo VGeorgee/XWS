@@ -6,6 +6,7 @@ const char *GET_ROUTES[] = {
         "/demofunction",
         "/simple",
         "/favicon.ico",
+        "/api/leaderboard",
         NULL
 };
 /// GET ROUTE FUNCTIONS
@@ -13,16 +14,19 @@ char * (* GET[])(char *) = {
         demofunction,
         simple_response,
         favicon,
+        get_leaderboard,
         NULL
 };
 
 
 /// POST ROUTE DEFINITION
 const char *POST_ROUTES[] = {
+        "/api/leaderboard",
         NULL
 };
 /// POST ROUTE FUNCTIONS
 char * (* POST[])(char *) = {
+        post_leaderboard,
         NULL
 };
 
