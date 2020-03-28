@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
-
 #include "../include/driver.h"
 #include "../include/configuration.h"
-
-
-#define LOG(s) printf("[LOG]:\t%s\n", s);
+#include "../include/utils.h"
 
 int main(int argc, char **argv) {
     int default_port;

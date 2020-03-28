@@ -26,7 +26,7 @@ XWS is a C based cross-platform web server project, that focuses on simplifying 
 
 ### Building XWS
 
-##### Linux:
+##### Linux/MacOS:
     gcc -I ./include src/*.c -o xws
 
 ##### Windows:
