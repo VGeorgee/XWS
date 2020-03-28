@@ -5,5 +5,5 @@
 
 #define LOG(s) printf("[LOG]:\t%s\n", s);
 
-
+ 
 #endif //WEBSERVER_UTILS_H
