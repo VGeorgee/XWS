@@ -15,6 +15,9 @@
 #define OSTYPE 3
 #elif (defined(__MACH__) && defined(__APPLE__))
   #define OSTYPE 4
+  #include <sys/socket.h>
+  #include <stdlib.h>
+  #include <netinet/in.h>
 #else
   #define OSTYPE 0
 #endif

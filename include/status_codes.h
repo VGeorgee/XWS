@@ -5,7 +5,7 @@
 
 // 100
 #define STATUSCODE_CONTINUE_HEADER          "100 Continue"
-#define STATUSCODE_NOTFOUND_BODY            ""
+#define STATUSCODE_CONTINUE_BODY            ""
 
 
 // 200
