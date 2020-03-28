@@ -35,6 +35,9 @@ XWS is a C based cross-platform web server project, that focuses on simplifying 
 
 ### Running XWS
 
+##### Linux/MacOS:
+    ./xws [port]
+
 The executable only has one optional argument, which is the port number you wish to start the server on (default is 80).
 
 After starting XWS, and open `localhost` in a browser 
