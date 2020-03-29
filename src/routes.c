@@ -27,7 +27,7 @@ char *parse_response(const char status_code[], char **headers, char *body){
     char *response = calloc(buffer_length + 200, sizeof(uint8_t));
     sprintf(response, "HTTP/1.1 %s\r\nContent-Type: text/html; charset=UTF-8\r\n", status_code);
     char length[50] = {0};
-    sprintf(length, "Content-Length: %lu\r\n", strlen(body));
+    sprintf(length, "Content-Length: %zu\r\n", strlen(body));
     strcat(response, length);
     if(headers){
         for(int i = 0; headers[i]; i++){
