@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "../include/response.h"
 #include "../include/driver.h"
-#include "../include/configuration.h"
+#include "../include/build_config.h"
 #include "../include/utils.h"
 
 int main(int argc, char **argv) {

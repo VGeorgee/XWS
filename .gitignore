@@ -54,5 +54,9 @@ Mkfile.old
 dkms.conf
 .vscode
 test
-/cmake-build-debug/CMakeFiles/webserver.dir
 node_modules
+/cmake-build-debug/CMakeFiles/webserver.dir
+lista.txt
+.idea/workspace.xml
+cmake-build-debug/webserver.exe
+docs/flow.png

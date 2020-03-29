@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
+#include "../include/status_codes.h"
 
 char *demofunction(char *);
 char *simple_response(char *);

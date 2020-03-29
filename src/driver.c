@@ -59,7 +59,7 @@ char *response_parser(char *HEAD, char **headers, char *response_body){
 
 }
 
-char * _get_response(char *(*aot[])(char *), char *routes[], char *body, char *route){
+char * _get_response(char *(*aot[])(char *), const char *routes[], char *body, char *route){
     //printf("POINTER OF ARRAY OF FUNCTIONS:|||%p|||\n", aot);
     for(int i = 0; (* aot[i]) && routes[i]; i++ ){
         //printf("|||%s|||\n|||%s|||\n", routes[i], route);
@@ -85,12 +85,12 @@ char *get_response(char *s){
     //printf("\n||%s||\n", type);
     char *response = NULL;
     if(strcmp(type, "GET") == 0){
-        response = _get_response(&GET, GET_ROUTES,"asd", route);
+        response = _get_response(GET, GET_ROUTES,"asd", route);
     } else if(strcmp(type, "POST") == 0){
         response = _get_response(POST, POST_ROUTES,"asd", route);
     } else if(strcmp(type, "PUT") == 0){
         response = _get_response(PUT, PUT_ROUTES,"asd", route);
-    } else if(strcmp(type, "DELETE" == 0)){
+    } else if(strcmp(type, "DELETE") == 0){
         response = _get_response(DELETE, DELETE_ROUTES,"asd", route);
     }
    // printf("//%p//\n", response);

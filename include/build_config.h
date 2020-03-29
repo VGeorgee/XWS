@@ -1,5 +1,5 @@
-#ifndef WEBSERVER_CONFIGURATION_H
-#define WEBSERVER_CONFIGURATION_H
+#ifndef WEBSERVER_BUILD_CONFIG_H
+#define WEBSERVER_BUILD_CONFIG_H
 
 
 #if defined(linux) || defined(_linux) || defined(__linux__) || defined(__unix__)
@@ -26,4 +26,4 @@
 #define DEFAULT_BUFFER_SIZE 40000
 
 
-#endif //WEBSERVER_CONFIGURATION_H
+#endif //WEBSERVER_BUILD_CONFIG_H

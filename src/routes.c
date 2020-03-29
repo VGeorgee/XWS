@@ -1,5 +1,4 @@
 #include "../include/routes.h"
-#include "../include/status_codes.h"
 
 int get_length(char **headers, char *body){
     int buffer_length = sizeof(uint32_t);
